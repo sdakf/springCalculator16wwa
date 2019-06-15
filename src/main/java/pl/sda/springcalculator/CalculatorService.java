@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 @Service //singleton
 public class CalculatorService {
 
-    public double calculate(String sentValue){
+    public double calculate(String sentValue){ //todo use cache -> own implementation
+        Thread.sleep(3000);
         Pattern pattern = Pattern.compile("(\\d+)(\\D+)(\\d+)");
         Matcher matcher = pattern.matcher(sentValue);
         if (matcher.matches()) {
