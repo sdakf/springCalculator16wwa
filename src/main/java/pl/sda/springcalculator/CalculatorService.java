@@ -9,7 +9,11 @@ import java.util.regex.Pattern;
 public class CalculatorService {
 
     public double calculate(String sentValue){ //todo use cache -> own implementation
-        Thread.sleep(3000);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Pattern pattern = Pattern.compile("(\\d+)(\\D+)(\\d+)");
         Matcher matcher = pattern.matcher(sentValue);
         if (matcher.matches()) {
